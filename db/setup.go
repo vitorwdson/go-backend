@@ -1,10 +1,12 @@
-package models
+package db
 
 import (
 	"os"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+
+	"vitorwdson/go-backend/db/models"
 )
 
 var DB *gorm.DB
@@ -19,6 +21,8 @@ func SetupDB() {
 	if err != nil {
 		panic(err)
 	}
+
+	db.AutoMigrate(&models.User{})
 
 	DB = db
 }
