@@ -18,6 +18,7 @@ func main() {
 	r := gin.Default()
 
 	r.POST("auth/register", auth.RegisterUser)
+	r.POST("auth/login", auth.Login)
 
 	port := os.Getenv("PORT")
 	if port == "" {

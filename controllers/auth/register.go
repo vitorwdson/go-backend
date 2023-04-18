@@ -29,6 +29,7 @@ func RegisterUser(c *gin.Context) {
 		return
 	}
 
+	// TODO: Hash the password
 	result := db.DB.Create(&user)
 	if result.Error != nil {
 		if db.IsErrorCode(result.Error, db.PgDuplicateError) {
