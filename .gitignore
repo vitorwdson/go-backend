@@ -22,3 +22,6 @@ go.work
 
 # Environment variables
 .env
+
+# VSCode debug file
+__debug_bin
