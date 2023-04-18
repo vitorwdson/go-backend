@@ -1,0 +1,9 @@
+@host=http://localhost:4000
+
+POST {{host}}/auth/register
+Content-Type: application/json
+
+{
+  "username": "vitorwdson3",
+  "password": "v32132199"
+}

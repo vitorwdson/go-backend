@@ -8,7 +8,7 @@ import (
 type User struct {
 	Base
 	Username string `json:"username" gorm:"unique;notNull"`
-	Password string `json:"password" gorm:"unique;notNull"`
+	Password string `json:"-" gorm:"notNull"`
 }
 
 func (user User) ValidatePassword() error {
