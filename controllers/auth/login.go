@@ -22,13 +22,17 @@ func Login(c *gin.Context) {
 	var user models.User
 	result := db.DB.Where("username = ?", input.Username).First(&user)
 	if result.Error != nil {
-		c.JSON(http.StatusNotFound, gin.H{"error": "Username or password is invalid"})
+		c.JSON(http.StatusNotFound, gin.H{
+			"error": "Username or password is invalid",
+		})
 		return
 	}
 
 	// TODO: Check against hashed password
 	if user.Password != input.Password {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Username or password is invalid"})
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": "Username or password is invalid",
+		})
 		return
 	}
 
